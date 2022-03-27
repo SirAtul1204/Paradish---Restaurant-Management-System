@@ -13,13 +13,7 @@ import { UserEntity } from './entities/user.entity';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'ec2-18-215-96-22.compute-1.amazonaws.com',
-      database: 'd81q5s4qmtc5vf',
-      username: 'kzgtyhwnqhostc',
-      port: 5432,
-      password:
-        '387f79988193173cdf64e2e43aabde16c5951f875fd21a06453532cc1cc32419',
-      // url: 'postgres://kzgtyhwnqhostc:387f79988193173cdf64e2e43aabde16c5951f875fd21a06453532cc1cc32419@ec2-18-215-96-22.compute-1.amazonaws.com:5432/d81q5s4qmtc5vf',
+      url: process.env.DATABASE_URL,
       entities: [RestaurantEntity, UserEntity],
       synchronize: true,
       extra: {
