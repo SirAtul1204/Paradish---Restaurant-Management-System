@@ -4,11 +4,12 @@ import {
   Column,
   JoinColumn,
   OneToMany,
+  BaseEntity,
 } from 'typeorm';
 import { UserEntity } from './user.entity';
 
 @Entity()
-export class RestaurantEntity {
+export class RestaurantEntity extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
